@@ -21,7 +21,7 @@ device are stored in user's settings.
 ![image](CNC14Camera.png "Default view")
 ![image](CNC14Camera_setup.png "Setup view")
 
-Prerequisites:
+# Prerequisites
 This program is a python3-script using the modules PyQt5,cv2,math,numpy and
 platform.
 
@@ -31,7 +31,7 @@ Installed python:
 Linux: /usr/bin/python3 CNC14Camera.py
 Windows: double click on CNC14Camera.py
 
-Single executables:
+# Single executables
 You may want to have a single executable so that you don't have to take care
 about installing python3 and the required modules - especially on computers
 using Windows.
@@ -47,7 +47,7 @@ Afterwards the single executable is located in the sub-directory "dist".
 It contains a python interpreter and all of the required modules so that
 the executable may be run on computers which don't have python installed
 
-NOTE: There have been newer versions of PyInstaller and OpenCV (cv2) which
+**NOTE**: There have been newer versions of PyInstaller and OpenCV (cv2) which
       are currently incompatible. A known working combination is:
       opencv-python: 4.5.5.64
       pyinstaller: 5.2

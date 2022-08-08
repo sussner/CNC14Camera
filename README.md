@@ -3,7 +3,7 @@ A simple camera tool for the CNC14 machine - or any other CNC machine.
 (CNC14 is a trademark of Birgit Hellendahl: hell@cnc14.de)
 
 The purpose of this tool is to zero the XY-coordinates of a CNC machine.
-It permanently display the image grabbed from a video device, e.g. a camera
+It permanently displays the image grabbed from a video device, e.g. a camera
 plugged into an USB port. The image contains a red cross indicating the X-
 and Y-axis of the machine. The center of cross is a green circle, the radius
 of which can be adjusted with a slide control next to the resolution

@@ -27,9 +27,9 @@ platform.
 
 Usage: Just run the python script without any parameters in your favorite way.
 
-Installed python:
-Linux: /usr/bin/python3 CNC14Camera.py
-Windows: double click on CNC14Camera.py
+Installed python:<br>
+Linux: /usr/bin/python3 CNC14Camera.py<br>
+Windows: double click on CNC14Camera.py<br>
 
 # Single executables
 You may want to have a single executable so that you don't have to take care

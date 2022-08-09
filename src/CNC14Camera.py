@@ -332,17 +332,17 @@ class App(QWidget):
     def brightnessChange(self):
         self.brightness = self.slider_brightness.value()
         self.value_brightness.setText(str(self.slider_brightness.value()))
-        self._cap.set(cv2.CAP_PROP_BRIGHTNESS,self.brightness)
+        self.curCap.set(cv2.CAP_PROP_BRIGHTNESS,self.brightness)
 
     def contrastChange(self):
         self.contrast = self.slider_contrast.value()
         self.value_contrast.setText(str(self.slider_contrast.value()))
-        self._cap.set(cv2.CAP_PROP_CONTRAST,self.contrast)
+        self.curCap.set(cv2.CAP_PROP_CONTRAST,self.contrast)
 
     def saturationChange(self):
         self.saturation = self.slider_saturation.value()
         self.value_saturation.setText(str(self.slider_saturation.value()))
-        self._cap.set(cv2.CAP_PROP_SATURATION,self.saturation)
+        self.curCap.set(cv2.CAP_PROP_SATURATION,self.saturation)
         
         
     @pyqtSlot(np.ndarray)

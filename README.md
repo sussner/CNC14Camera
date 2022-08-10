@@ -1,6 +1,7 @@
 # CNC14Camera
-A simple camera tool for the CNC14 machine - or any other CNC machine.
-(CNC14 is a trademark of Birgit Hellendahl: hell@cnc14.de)
+A simple camera tool for the CNC14 machine (https://www.cnc14.de) which was designed by
+Birgit Hellendahl.
+However, you may use this tool for any other CNC machine as well.
 
 The purpose of this tool is to zero the XY-coordinates of a CNC machine.
 It permanently displays the image grabbed from a video device, e.g. a camera

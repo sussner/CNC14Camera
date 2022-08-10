@@ -40,9 +40,6 @@ class CaptureThread(QThread):
                 ret, cv_img = self.cap.read()
                 if ret:
                     self.image_changed.emit(cv_img)
-            else:
-                # wait 100ms
-                wait(100)
 
 
 class App(QWidget):

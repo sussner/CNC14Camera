@@ -33,7 +33,7 @@ Linux: /usr/bin/python3 CNC14Camera.py<br>
 Windows 10/11: double click on CNC14Camera.py<br>
 
 Windows 7: Since Windows 7 is not supported anymore, you need to install an
-older version of python (tested Python 3.8.9 https://www.python.org/ftp/python/3.9.8/python-3.9.8.exe).
+older version of python (tested Python 3.8.9 https://www.python.org/ftp/python/3.8.9/python-3.8.9.exe).
 
 
 # Single executables

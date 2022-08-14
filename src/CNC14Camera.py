@@ -25,6 +25,9 @@ import numpy as np
 import math
 import platform
 
+versionMajor = 1
+versionMinor = 0
+versionPatchLevel = 0
 
 class CaptureThread(QThread):
     image_changed = pyqtSignal(np.ndarray)
@@ -89,7 +92,7 @@ class App(QWidget):
         self.deviceParams = []
         for idx in [0,1,2,3,4,5,6,7]:
             if platform.system() == "Windows":
-              devCap = cv2.VideoCapture(idx)
+              devCap = cv2.VideoCapture(idx,cv2.CAP_DSHOW)
             elif platform.system() == "Darwin":
               devCap = cv2.VideoCapture(idx)
             else:
@@ -106,7 +109,8 @@ class App(QWidget):
                 self.deviceParams.append(p)
                 devCap.release()
 
-        self.setWindowTitle("CNC14 Camera")
+        versionStr = "v"+str(versionMajor) + "." + str(versionMinor) + "." + str(versionPatchLevel)
+        self.setWindowTitle("CNC14 Camera "+versionStr)
         self.keyPressEvent = self.keyPressEvent
         # create combobox for video device
         self.cbox_size = QComboBox()
@@ -181,6 +185,10 @@ class App(QWidget):
         self.slider_saturation.setVisible(False)
         self.value_saturation.setVisible(False)
 
+        # button for reset sliders
+        self.resetButton = QPushButton("Reset")
+        self.resetButton.setVisible(False)
+
         # create a vertical box layout and add the two labels
         grid = QGridLayout()
         self._grid = grid
@@ -190,6 +198,7 @@ class App(QWidget):
         grid.addWidget(self.image_label,1,0,1,3)
         grid.addWidget(self.label_device,2,0)
         grid.addWidget(self.cbox_device,2,1)
+        grid.addWidget(self.resetButton,2,2)
         grid.addWidget(self.label_rot,3,0)
         grid.addWidget(self.slider_rot,3,1)
         grid.addWidget(self.value_rot,3,2)
@@ -218,6 +227,8 @@ class App(QWidget):
         
         self.cbox_size.currentIndexChanged.connect(self.changeResolution)
         self.cbox_device.currentIndexChanged.connect(self.changeCamera)
+
+        self.resetButton.clicked.connect(self.resetSliders)
  
         # finally set current resolution
         self.changeResolution(self.resIdx)
@@ -241,6 +252,8 @@ class App(QWidget):
         self.settings.setValue("contrast",self.contrast)
         self.settings.setValue("saturation",self.saturation)
         self.settings.setValue("linewidth",self.lineWidth)
+        # enforce exit of program
+        sys.exit(0)
         
         
     def showEvent(self,event):
@@ -274,7 +287,7 @@ class App(QWidget):
         if deviceListIdx >= 0 and deviceListIdx < numDevices:
             idx = self.deviceList[deviceListIdx]
             if platform.system() == "Windows":
-              self.curCap = cv2.VideoCapture(idx)
+              self.curCap = cv2.VideoCapture(idx,cv2.CAP_DSHOW)
             elif platform.system() == "Darwin":
               self.curCap = cv2.VideoCapture(idx)
             else:
@@ -318,6 +331,7 @@ class App(QWidget):
         self.label_saturation.setVisible(flag)
         self.slider_saturation.setVisible(flag)
         self.value_saturation.setVisible(flag)
+        self.resetButton.setVisible(flag)
 
     def radiusChange(self):
         self.radius = self.slider_radius.value()
@@ -341,7 +355,12 @@ class App(QWidget):
         self.value_saturation.setText(str(self.slider_saturation.value()))
         self.curCap.set(cv2.CAP_PROP_SATURATION,self.saturation)
         
-        
+    def resetSliders(self):
+        self.slider_rot.setValue(0)
+        self.slider_brightness.setValue(128)
+        self.slider_contrast.setValue(36)
+        self.slider_saturation.setValue(38)
+
     @pyqtSlot(np.ndarray)
     def update_image(self, cv_img):
         # Updates the image_label with a new opencv image

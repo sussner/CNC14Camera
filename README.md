@@ -1,12 +1,11 @@
 # CNC14Camera
-A simple camera tool for the CNC14 machine (https://www.cnc14.de) which was designed by
-Birgit Hellendahl.
-However, you may use this tool for any other CNC machine as well.
+A simple camera tool for the CNC14 machine - or any other CNC machine.
+(CNC14 is a trademark of Birgit Hellendahl: hell@cnc14.de)
 
 The purpose of this tool is to zero the XY-coordinates of a CNC machine.
 It permanently displays the image grabbed from a video device, e.g. a camera
 plugged into an USB port. The image contains a red cross indicating the X-
-and Y-axis of the machine. The center of cross is a green circle, the radius
+and Y-axis of the machine. The center of the cross is a green circle, the radius
 of which can be adjusted with a slide control next to the resolution
 combo-box-button.
 By clicking on the image it is possible to setup some parameters which are
@@ -16,7 +15,7 @@ The next line rotates the red cross in order to match the actual X-
 and Y-axis of the machine. In addition the camera parameters, like brightness,
 contrast and saturation, can be adjusted as well.
 All of the slider values as well as the current resolution and the current
-device are stored in user's settings.
+device are stored in user's settings and will be restored at the next start.
 
 
 ![image](CNC14Camera.png "Default view")
@@ -30,7 +29,11 @@ Usage: Just run the python script without any parameters in your favorite way.
 
 Installed python:<br>
 Linux: /usr/bin/python3 CNC14Camera.py<br>
-Windows: double click on CNC14Camera.py<br>
+Windows 10/11: double click on CNC14Camera.py<br>
+
+Windows 7: Since Windows 7 is not supported anymore, you need to install an
+older version of python (tested Python 3.8.9 https://www.python.org/ftp/python/3.9.8/python-3.9.8.exe).
+
 
 # Single executables
 You may want to have a single executable so that you don't have to take care
@@ -58,7 +61,7 @@ the executable may be run on computers which don't have python installed
 
       if you have newer version installed, you may override them by
         pip install --ignore-installed opencv-python==4.5.5.64
-        pip install --ignore-installed pyinstaller=5.2
+        pip install --ignore-installed pyinstaller==5.2
 
 This procedure works for Windows machines as well as for MacOS machines
 and for Linux machines. However, the executables only run on machines
@@ -67,4 +70,4 @@ executables build on a specific distribution may not run on a different
 Linux distribution.
 
 The bin-directory already contains a compiled single executable for
-Windows and MacOS (camera access may be required for terminal).
+Windows (build on Win7 32-bit and Python 3.8.9) and MacOS (camera access may be required for terminal).

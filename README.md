@@ -72,3 +72,4 @@ Linux distribution.
 
 The bin-directory already contains a compiled single executable for
 Windows (build on Win7 32-bit and Python 3.8.9) and MacOS (camera access may be required for terminal).
+

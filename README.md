@@ -77,9 +77,9 @@ Windows (build on Win7 32-bit and Python 3.8.9) and MacOS (camera access may be 
 **Q**: My camera does not show up in the camera-menu anymore. How can I fix it?
 
 **A**: At the first start, all found cameras are put into the menu and some default settings are used.
-   When the program exits, the settings and the used camera are stored in the registry (Windows) or
-   in a config-file (e.g. .config/CNC14Camera/CNC14Camera.conf on Ubuntu-Linux). On MacOS the config-file
-   is located at $HOME/Library/Preferences/com.cnc14camera.CNC14Camera.plist.
+   When the program exits, the settings and the used camera are stored in the registry (Windows registry:
+   Computer\HKEY_CURRENT_USER\Software\CNC14Camera) or in a config-file (e.g. .config/CNC14Camera/CNC14Camera.conf
+   on Ubuntu-Linux). On MacOS the config-file is located at $HOME/Library/Preferences/com.cnc14camera.CNC14Camera.plist.
    When the camera-software is run again, the settings of the config-file are applied. If the device
    for the camera does not match exactly, it is ignored. This may happen if the order of USB devices has
    changed, e.g. if you have added a new USB device or removed one.

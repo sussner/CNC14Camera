@@ -73,6 +73,21 @@ Linux distribution.
 The bin-directory already contains a compiled single executable for
 Windows (build on Win7 32-bit and Python 3.8.9) and MacOS (camera access may be required for terminal).
 
+# Using CNC14Camera on a Mac
+MacOSX has a detailed security structure to protect users from malware and badly behaving applications.
+If you want to use CNC14Camera on a Mac, you need to deal with that.
+1. Intel Macs only
+The CNC14Camera executable cannot be used on newer Macs with Apple Silicon processors and will crash at startup. It will run fine on older Macs with an Intel processor.
+2. Build from source
+You can build the executable yourself. That should be straightforward, but you must do it from Terminal and be a bit technical. You can use the resulting executable without any problem as you have built it yourself.
+3. Use the executable
+The CNC14Camera executable is not a Mac application but a UNIX executable and you need to start it from Terminal as explained elsewhere in this ReadMe.
+4. Allow executable to startup
+MacOSX allows only software downloaded from the App Store or digitally signed by registered developers to startup. When you try to start CNC14Camera, you will get a message ‘CNC14Camera was blocked from opening because it is not from a identified developer.’ It is easy to deal with that; one link on Internet, explaining how to do that is:
+https://www.goodcore.co.uk/blog/how-to-install-apps-on-mac-from-unidentified-developers/#:~:text=First%20of%20all%2C%20go%20to,App%20Store%20and%20identified%20developers.”
+
+**This section has been provided by A. Hartman (a.hartman@telenet.be)**
+
 # FAQ
 **Q**: My camera does not show up in the camera-menu anymore. How can I fix it?
 

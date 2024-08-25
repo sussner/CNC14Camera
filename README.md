@@ -86,7 +86,7 @@ The CNC14Camera executable is not a Mac application but a UNIX executable and yo
 MacOSX allows only software downloaded from the App Store or digitally signed by registered developers to startup. When you try to start CNC14Camera, you will get a message ‘CNC14Camera was blocked from opening because it is not from a identified developer.’ It is easy to deal with that; one link on Internet, explaining how to do that is:
 https://www.goodcore.co.uk/blog/how-to-install-apps-on-mac-from-unidentified-developers/#:~:text=First%20of%20all%2C%20go%20to,App%20Store%20and%20identified%20developers.”
 
-**This section has been provided by A. Hartman (a.hartman@telenet.be)**
+**This section has been kindly provided by A. Hartman (a.hartman@telenet.be)**
 
 # FAQ
 **Q**: My camera does not show up in the camera-menu anymore. How can I fix it?
